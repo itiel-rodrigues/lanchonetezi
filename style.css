@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0d0b09;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+
+    background: #17120e;
+
+    border-bottom: 1px solid #30251d;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ddd;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff9d00;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #0d0b09 0%,
+            rgba(13, 11, 9, 0.8) 40%,
+            rgba(13, 11, 9, 0.2) 100%
+        ),
+        url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero-content > p:first-child {
+    color: #ff9d00;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #ddd;
+
+    line-height: 1.6;
+
+    font-size: 17px;
+}
+
+
+/* BOTÃO */
+
+.button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    background: #ff8c00;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ffad32;
+
+    transform: translateY(-2px);
+}
+
+
+/* CARDÁPIO */
+
+.menu {
+    padding: 70px 60px;
+}
+
+.menu > h2 {
+    text-align: center;
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+.menu-subtitle {
+    text-align: center;
+
+    color: #999;
+
+    margin-bottom: 35px;
+}
+
+
+/* CATEGORIAS */
+
+.categories {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.category {
+    padding: 13px 24px;
+
+    border: 1px solid #403229;
+
+    background: #191410;
+
+    color: #ddd;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.category:hover {
+    border-color: #ff9d00;
+}
+
+.category.active {
+    background: #ff8c00;
+
+    color: white;
+
+    border-color: #ff8c00;
+}
+
+
+/* PRODUTOS */
+
+.products {
+    display: none;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.products.active-category {
+    display: grid;
+}
+
+
+/* CARD */
+
+.product-card {
+    background: #17130f;
+
+    border: 1px solid #30251d;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #ff8c00;
+}
+
+
+/* IMAGEM */
+
+.product-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* INFORMAÇÕES */
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #999;
+
+    line-height: 1.5;
+
+    min-height: 65px;
+
+    margin-bottom: 15px;
+}
+
+.product-info strong {
+    display: block;
+
+    color: #ff9d00;
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+}
+
+
+/* BOTÃO PEDIR */
+
+.product-info button {
+    width: 100%;
+
+    padding: 13px;
+
+    background: #ff8c00;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.product-info button:hover {
+    background: #ffad32;
+}
+
+
+/* CONTATO */
+
+.contact {
+    padding: 80px 30px;
+
+    text-align: center;
+
+    background: #17120e;
+}
+
+.contact h2 {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #aaa;
+
+    margin-bottom: 30px;
+}
+
+.whatsapp {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: #20b957;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    background: #28d568;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #0a0807;
+
+    color: #777;
+
+    line-height: 2;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 0 25px;
+    }
+
+    .hero {
+        padding: 60px 30px;
+    }
+
+    .hero h2 {
+        font-size: 48px;
+    }
+
+    .products {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    header {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 500px;
+
+        padding: 40px 20px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .menu {
+        padding: 55px 20px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .category {
+        width: 100%;
+    }
+
+}
