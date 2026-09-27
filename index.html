@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Point do Sabor</title>
+    <title>Pizzaria Corleone | Colina</title>
+
+    <meta
+        name="description"
+        content="Pizzaria Corleone - Colina. Pizzas, bebidas e muito sabor."
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
+    <!-- ================= HEADER ================= -->
 
-        <h1>🍔 POINT DO SABOR</h1>
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-icon">🍕</span>
+            <span>PIZZARIA CORLEONE</span>
+        </div>
 
         <nav>
             <a href="#inicio">Início</a>
@@ -26,22 +34,30 @@
     </header>
 
 
-    <!-- INÍCIO -->
+    <!-- ================= HERO ================= -->
+
     <section class="hero" id="inicio">
+
+        <div class="hero-overlay"></div>
 
         <div class="hero-content">
 
-            <p>LANCHES • PIZZAS • BEBIDAS</p>
+            <span class="hero-tag">
+                PIZZAS • BEBIDAS • COLINA
+            </span>
 
-            <h2>O sabor que você merece!</h2>
+            <h1>
+                Pizzaria Corleone
+                <br>
+                o sabor que você merece!
+            </h1>
 
             <p>
-                Hambúrgueres artesanais,
-                lanches caprichados e pizzas
-                feitas na hora.
+                Pizzas feitas na hora, ingredientes selecionados
+                e aquele sabor que dá vontade de pedir de novo.
             </p>
 
-            <a href="#cardapio" class="button">
+            <a href="#cardapio" class="hero-button">
                 VER CARDÁPIO
             </a>
 
@@ -50,725 +66,132 @@
     </section>
 
 
-    <!-- CARDÁPIO -->
-    <section class="menu" id="cardapio">
+    <!-- ================= CARDÁPIO ================= -->
 
-        <h2>Nosso Cardápio</h2>
+    <main id="cardapio" class="menu-section">
 
-        <p class="menu-subtitle">
-            Escolha uma categoria
-        </p>
+        <div class="section-title">
+
+            <h2>Nosso Cardápio</h2>
+
+            <p>
+                Escolha uma categoria
+            </p>
+
+        </div>
 
 
         <!-- CATEGORIAS -->
+
         <div class="categories">
 
             <button
                 class="category active"
-                onclick="mostrarCategoria('lanches', this)">
-                🍔 Lanches
-            </button>
-
-            <button
-                class="category"
-                onclick="mostrarCategoria('pizzas', this)">
+                data-category="pizzas"
+            >
                 🍕 Pizzas
             </button>
 
             <button
                 class="category"
-                onclick="mostrarCategoria('doces', this)">
-                🍫 Pizzas Doces
-            </button>
-
-            <button
-                class="category"
-                onclick="mostrarCategoria('bebidas', this)">
+                data-category="bebidas"
+            >
                 🥤 Bebidas
             </button>
 
         </div>
 
 
-        <!-- =========================
-             LANCHES
-        ========================== -->
+        <!-- PRODUTOS -->
 
-        <div
-            class="products active-category"
-            id="lanches">
+        <div id="products" class="products"></div>
 
+    </main>
 
-            <!-- HAMBÚRGUER -->
-            <article class="product-card">
 
-                <img
-                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
-                    alt="Hambúrguer">
+    <!-- ================= CARRINHO ================= -->
 
-                <div class="product-info">
+    <button id="cartButton" class="cart-button">
 
-                    <h3>Hambúrguer</h3>
+        🛒
 
-                    <p>
-                        Pão, hambúrguer artesanal,
-                        queijo, alface e tomate.
-                    </p>
-
-                    <strong>R$ 18,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Hambúrguer',
-                            18.90,
-                            'https://images.unsplash.com/photo-1568901346375-23c9450c58cd'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- X-TUDO -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1550547660-d9450f859349"
-                    alt="X-Tudo">
-
-                <div class="product-info">
-
-                    <h3>X-Tudo</h3>
-
-                    <p>
-                        Hambúrguer, queijo, presunto,
-                        bacon, ovo, calabresa,
-                        alface e tomate.
-                    </p>
-
-                    <strong>R$ 29,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'X-Tudo',
-                            29.90,
-                            'https://images.unsplash.com/photo-1550547660-d9450f859349'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- X-EGG -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1571091718767-18b5b1457add"
-                    alt="X-Egg">
-
-                <div class="product-info">
-
-                    <h3>X-Egg</h3>
-
-                    <p>
-                        Hambúrguer artesanal,
-                        queijo, ovo, alface e tomate.
-                    </p>
-
-                    <strong>R$ 22,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'X-Egg',
-                            22.90,
-                            'https://images.unsplash.com/photo-1571091718767-18b5b1457add'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- X-BACON -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1553979459-d2229ba7433b"
-                    alt="X-Bacon">
-
-                <div class="product-info">
-
-                    <h3>X-Bacon</h3>
-
-                    <p>
-                        Hambúrguer artesanal,
-                        queijo, bacon crocante
-                        e molho especial.
-                    </p>
-
-                    <strong>R$ 24,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'X-Bacon',
-                            24.90,
-                            'https://images.unsplash.com/photo-1553979459-d2229ba7433b'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- X-SALADA -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
-                    alt="X-Salada">
-
-                <div class="product-info">
-
-                    <h3>X-Salada</h3>
-
-                    <p>
-                        Hambúrguer, queijo,
-                        alface, tomate e molho especial.
-                    </p>
-
-                    <strong>R$ 21,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'X-Salada',
-                            21.90,
-                            'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- =========================
-             PIZZAS
-        ========================== -->
-
-        <div
-            class="products"
-            id="pizzas">
-
-
-            <!-- MUÇARELA -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002"
-                    alt="Pizza Muçarela">
-
-                <div class="product-info">
-
-                    <h3>Muçarela</h3>
-
-                    <p>
-                        Molho de tomate,
-                        muçarela, orégano e azeitona.
-                    </p>
-
-                    <strong>R$ 39,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Muçarela',
-                            39.90,
-                            'https://images.unsplash.com/photo-1574071318508-1cdbab80d002'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- CALABRESA -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498"
-                    alt="Pizza Calabresa">
-
-                <div class="product-info">
-
-                    <h3>Calabresa</h3>
-
-                    <p>
-                        Molho de tomate,
-                        muçarela, calabresa,
-                        cebola e orégano.
-                    </p>
-
-                    <strong>R$ 42,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Calabresa',
-                            42.90,
-                            'https://images.unsplash.com/photo-1579751626657-72bc17010498'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- FRANGO COM CATUPIRY -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47"
-                    alt="Pizza Frango com Catupiry">
-
-                <div class="product-info">
-
-                    <h3>Frango com Catupiry</h3>
-
-                    <p>
-                        Frango desfiado,
-                        muçarela e catupiry.
-                    </p>
-
-                    <strong>R$ 44,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Frango com Catupiry',
-                            44.90,
-                            'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- PORTUGUESA -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e"
-                    alt="Pizza Portuguesa">
-
-                <div class="product-info">
-
-                    <h3>Portuguesa</h3>
-
-                    <p>
-                        Presunto, ovo, cebola,
-                        milho, muçarela e azeitona.
-                    </p>
-
-                    <strong>R$ 45,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Portuguesa',
-                            45.90,
-                            'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- QUATRO QUEIJOS -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498"
-                    alt="Pizza Quatro Queijos">
-
-                <div class="product-info">
-
-                    <h3>Quatro Queijos</h3>
-
-                    <p>
-                        Muçarela, provolone,
-                        parmesão e catupiry.
-                    </p>
-
-                    <strong>R$ 47,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Quatro Queijos',
-                            47.90,
-                            'https://images.unsplash.com/photo-1579751626657-72bc17010498'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- CARNE SECA -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498"
-                    alt="Pizza Carne Seca">
-
-                <div class="product-info">
-
-                    <h3>Carne Seca</h3>
-
-                    <p>
-                        Carne seca desfiada,
-                        cebola, muçarela e catupiry.
-                    </p>
-
-                    <strong>R$ 49,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Carne Seca',
-                            49.90,
-                            'https://images.unsplash.com/photo-1579751626657-72bc17010498'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- =========================
-             PIZZAS DOCES
-        ========================== -->
-
-        <div
-            class="products"
-            id="doces">
-
-
-            <!-- CHOCOLATE -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498"
-                    alt="Pizza Chocolate">
-
-                <div class="product-info">
-
-                    <h3>Chocolate</h3>
-
-                    <p>
-                        Chocolate ao leite
-                        e chocolate branco.
-                    </p>
-
-                    <strong>R$ 44,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza de Chocolate',
-                            44.90,
-                            'https://images.unsplash.com/photo-1579751626657-72bc17010498'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- CHOCOLATE COM MORANGO -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498"
-                    alt="Pizza Chocolate com Morango">
-
-                <div class="product-info">
-
-                    <h3>Chocolate com Morango</h3>
-
-                    <p>
-                        Chocolate cremoso
-                        e morangos frescos.
-                    </p>
-
-                    <strong>R$ 47,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Chocolate com Morango',
-                            47.90,
-                            'https://images.unsplash.com/photo-1579751626657-72bc17010498'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- BANANA -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498"
-                    alt="Pizza Banana com Canela">
-
-                <div class="product-info">
-
-                    <h3>Banana com Canela</h3>
-
-                    <p>
-                        Banana, açúcar,
-                        canela e leite condensado.
-                    </p>
-
-                    <strong>R$ 43,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Banana com Canela',
-                            43.90,
-                            'https://images.unsplash.com/photo-1579751626657-72bc17010498'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- DOCE DE LEITE -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498"
-                    alt="Pizza Doce de Leite">
-
-                <div class="product-info">
-
-                    <h3>Doce de Leite</h3>
-
-                    <p>
-                        Doce de leite cremoso
-                        e coco ralado.
-                    </p>
-
-                    <strong>R$ 44,90</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Pizza Doce de Leite',
-                            44.90,
-                            'https://images.unsplash.com/photo-1579751626657-72bc17010498'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- =========================
-             BEBIDAS
-        ========================== -->
-
-        <div
-            class="products"
-            id="bebidas">
-
-
-            <!-- REFRIGERANTE -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e"
-                    alt="Refrigerante">
-
-                <div class="product-info">
-
-                    <h3>Refrigerante</h3>
-
-                    <p>
-                        Coca-Cola, Guaraná,
-                        Fanta ou Sprite.
-                    </p>
-
-                    <strong>R$ 6,00</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Refrigerante',
-                            6.00,
-                            'https://images.unsplash.com/photo-1544145945-f90425340c7e'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- SUCO -->
-            <article class="product-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1556679343-c7306c1976bc"
-                    alt="Suco Natural">
-
-                <div class="product-info">
-
-                    <h3>Suco Natural</h3>
-
-                    <p>
-                        Laranja, maracujá,
-                        morango ou abacaxi.
-                    </p>
-
-                    <strong>R$ 8,00</strong>
-
-                    <button
-                        onclick="adicionarPedido(
-                            'Suco Natural',
-                            8.00,
-                            'https://images.unsplash.com/photo-1556679343-c7306c1976bc'
-                        )">
-                        PEDIR
-                    </button>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTATO -->
-    <section class="contact" id="contato">
-
-        <h2>Faça seu pedido</h2>
-
-        <p>
-            Escolha seus produtos e
-            finalize pelo WhatsApp.
-        </p>
-
-        <button
-            class="whatsapp"
-            onclick="abrirCarrinho()">
-
-            🛒 VER MEU PEDIDO
-
-        </button>
-
-    </section>
-
-
-    <!-- BOTÃO DO CARRINHO -->
-    <button
-        class="botao-carrinho"
-        onclick="abrirCarrinho()">
-
-        🛒 Carrinho
-
-        <span id="quantidade-carrinho">
-            0
+        <span>
+            Carrinho
         </span>
+
+        <strong id="cartCount">
+            0
+        </strong>
 
     </button>
 
 
-    <!-- CARRINHO -->
-    <div
-        id="carrinho"
-        class="carrinho">
+    <!-- ================= MODAL CARRINHO ================= -->
+
+    <div id="cartModal" class="modal">
+
+        <div class="cart">
+
+            <div class="cart-header">
+
+                <h2>
+                    Seu pedido
+                </h2>
+
+                <button id="closeCart">
+                    ×
+                </button>
+
+            </div>
 
 
-        <div class="carrinho-header">
-
-            <h2>🛒 Seu pedido</h2>
-
-            <button onclick="fecharCarrinho()">
-                ✕
-            </button>
-
-        </div>
+            <div id="cartItems" class="cart-items"></div>
 
 
-        <div
-            id="lista-carrinho"
-            class="lista-carrinho">
-        </div>
+            <div class="cart-total">
 
-
-        <div class="carrinho-footer">
-
-            <h3>
-
-                Total:
-
-                <span id="total-carrinho">
-                    R$ 0,00
+                <span>
+                    Total
                 </span>
 
-            </h3>
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div class="customer-form">
+
+                <h3>
+                    Dados para o pedido
+                </h3>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Seu nome"
+                >
+
+                <input
+                    type="text"
+                    id="customerAddress"
+                    placeholder="Endereço para entrega"
+                >
+
+                <textarea
+                    id="customerObservation"
+                    placeholder="Observação (opcional)"
+                ></textarea>
+
+            </div>
 
 
             <button
-                class="limpar"
-                onclick="limparCarrinho()">
-
-                🗑️ Limpar carrinho
-
-            </button>
-
-
-            <button
-                class="finalizar"
-                onclick="finalizarPedido()">
-
-                📱 Finalizar pelo WhatsApp
-
+                id="whatsappButton"
+                class="whatsapp-button"
+            >
+                FINALIZAR PELO WHATSAPP
             </button>
 
         </div>
@@ -776,15 +199,57 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- ================= CONTATO ================= -->
+
+    <section id="contato" class="contact-section">
+
+        <div class="contact-content">
+
+            <span>
+                PIZZARIA CORLEONE
+            </span>
+
+            <h2>
+                Pizzaria Corleone - Colina
+            </h2>
+
+            <p>
+                📍 Colina
+            </p>
+
+            <div class="phones">
+
+                <a href="tel:3232135683">
+                    📞 (32) 3213-5683
+                </a>
+
+                <a href="tel:32984638449">
+                    📱 (32) 98463-8449
+                </a>
+
+                <a href="tel:32999407668">
+                    📱 (32) 99940-7668
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Pizzaria Corleone - Colina. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
     <script src="script.js"></script>
 
 </body>
-
 </html>
-
-
-
-
-    
-   
